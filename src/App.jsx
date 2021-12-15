@@ -1,5 +1,5 @@
-import GuestBook from './components/GuestBook/GuestBook';
+import Home from './views/Home/Home';
 
 export default function App() {
-  return <GuestBook />;
+  return <Home />;
 }

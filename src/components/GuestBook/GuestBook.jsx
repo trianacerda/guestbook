@@ -1,13 +1,16 @@
 import { useState } from 'react';
+import { useMessages } from '../../context/MessageContext';
+import { useUser } from '../../context/UserContext';
 
 function GuestBook() {
   const [name, setName] = useState('');
   const [guestMessage, setGuestMessage] = useState('');
-  const [messages, setMessages] = useState('');
+  const { messages, setMessages } = useMessages('');
+  const { user, setUser } = useUser();
 
   function updateGuestName() {
     if (!guestMessage) return;
-    setMessages([...messages], { name, guestMessage });
+    setMessages([...messages, { name, message: guestMessage }]);
     setGuestMessage('');
   }
 
@@ -16,23 +19,31 @@ function GuestBook() {
     updateGuestName();
   };
 
+  const guestNameEntry = (
+    <div className="name-field">
+      <label className="name-label" htmlFor="name-entry">
+        Name:
+        <input
+          type="text"
+          id="guest-name"
+          value={name}
+          className="name-input"
+          placeholder="Enter Name"
+          onChange={(e) => setName(e.target.value)}
+        />
+      </label>
+    </div>
+  );
+
+  const guestBookMessage = user
+    ? `Hey ${name}, thanks for signing your message`
+    : `Please sign the guest book, ${name}`;
+
   return (
     <>
-      <h1>Display Message to Guest</h1>
-      <form>
-        <div className="name-field">
-          <label className="name-label" htmlFor="name-entry">
-            Name:
-            <input
-              type="text"
-              id="guest-name"
-              value={name}
-              className="name-input"
-              placeholder="Enter Name"
-              onChange={(e) => setName(e.target.value)}
-            />
-          </label>
-        </div>
+      <h1 className="guest-book-message">{guestBookMessage}</h1>
+      <form className="guestbook-form" onSubmit={handleSubmit}>
+        {user ? null : guestNameEntry}
         <div className="message-field">
           <label>
             Message:
@@ -46,16 +57,21 @@ function GuestBook() {
             </textarea>
           </label>
         </div>
-
-        <button
-          type="submit"
-          className="submit-btn"
-          onClick={() => {
-            setName('');
-          }}
-        >
-          Sign Your Message
+        <button className="button" type="submit">
+          Submit && Sign
         </button>
+        {user && (
+          <button
+            type="button"
+            className="sign-out-btn"
+            onClick={() => {
+              setUser('');
+              setName('');
+            }}
+          >
+            Not {user} ??
+          </button>
+        )}
       </form>
     </>
   );
