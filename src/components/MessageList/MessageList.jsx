@@ -1,3 +1,4 @@
+import React from 'react';
 import { useMessages } from '../../context/MessageContext';
 import Message from '../Message/Message';
 

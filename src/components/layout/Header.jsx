@@ -1,3 +1,4 @@
+import React from 'react';
 import { useUser } from '../../context/UserContext';
 
 const Header = () => {
@@ -7,7 +8,7 @@ const Header = () => {
     <header>
       {user ? (
         <p>
-          You're Signing Guestbook as{' '}
+          You're Signing Guestbook as
           <span className="header-user">{user}</span>
         </p>
       ) : (

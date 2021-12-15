@@ -13,11 +13,11 @@ const UserProvider = ({ children }) => {
 };
 
 const useUser = () => {
-  const context = useContext(useContext);
+  const context = useContext(UserContext);
 
   if (context === undefined) {
     throw new Error(
-      'useMessages hook must be used withing a MessageContext Provider parent tag'
+      'useUser hook must be used withing a MessageContext Provider parent tag'
     );
   }
 

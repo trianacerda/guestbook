@@ -5,11 +5,12 @@ import { useUser } from '../../context/UserContext';
 function GuestBook() {
   const [name, setName] = useState('');
   const [guestMessage, setGuestMessage] = useState('');
-  const { messages, setMessages } = useMessages('');
+  const { messages, setMessages } = useMessages();
   const { user, setUser } = useUser();
 
   function updateGuestName() {
     if (!guestMessage) return;
+    setUser(name);
     setMessages([...messages, { name, message: guestMessage }]);
     setGuestMessage('');
   }
@@ -23,15 +24,15 @@ function GuestBook() {
     <div className="name-field">
       <label className="name-label" htmlFor="name-entry">
         Name:
-        <input
-          type="text"
-          id="guest-name"
-          value={name}
-          className="name-input"
-          placeholder="Enter Name"
-          onChange={(e) => setName(e.target.value)}
-        />
       </label>
+      <input
+        type="text"
+        id="guest-name"
+        value={name}
+        className="name-input"
+        placeholder="Enter Name"
+        onChange={(e) => setName(e.target.value)}
+      />
     </div>
   );
 
@@ -52,9 +53,8 @@ function GuestBook() {
               value={guestMessage}
               id="guest-message"
               placeholder="Please leave a message..."
-            >
               onChange={(e) => setGuestMessage(e.target.value)}
-            </textarea>
+            />
           </label>
         </div>
         <button className="button" type="submit">

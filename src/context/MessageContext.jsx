@@ -1,9 +1,10 @@
+import React from 'react';
 import { useContext, createContext, useState } from 'react';
 
 const MessageContext = createContext();
 
 const MessageProvider = ({ children }) => {
-  const [messages, setMessages] = useState('');
+  const [messages, setMessages] = useState([]);
 
   return (
     <MessageContext.Provider value={{ messages, setMessages }}>
