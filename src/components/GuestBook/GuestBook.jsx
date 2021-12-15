@@ -1,3 +1,4 @@
+import React from 'react';
 import { useState } from 'react';
 import { useMessages } from '../../context/MessageContext';
 import { useUser } from '../../context/UserContext';

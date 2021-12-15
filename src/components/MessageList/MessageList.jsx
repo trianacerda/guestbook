@@ -7,7 +7,7 @@ function MessageList() {
 
   return (
     <>
-      <ul>
+      <ul aria-label="message-list">
         {messages.map((message) => {
           return (
             <li key={`${message.name}-${message.message}`}>

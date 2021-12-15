@@ -1,3 +1,4 @@
+import React from 'react';
 import { MessageProvider } from '../../context/MessageContext';
 import GuestBook from '../../components/GuestBook/GuestBook';
 import MessageList from '../../components/MessageList/MessageList';
