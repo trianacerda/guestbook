@@ -18,3 +18,4 @@ it('should render a MessageList component', async () => {
 
   expect(container).toMatchSnapshot();
 });
+[];
