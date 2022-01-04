@@ -4,9 +4,16 @@ import LayoutViews from './views/LayoutViews/LayoutViews';
 export default function App() {
   return (
     <ProvideAuth>
-      <LayoutViews>
-        <Home />
-      </LayoutViews>
+      <Router>
+        <Route path="/login">
+          <Login />
+        </Route>
+        <PrivateRoute path="/guestbook">
+          <LayoutViews>
+            <Home />
+          </LayoutViews>
+        </PrivateRoute>
+      </Router>
     </ProvideAuth>
   );
 }
