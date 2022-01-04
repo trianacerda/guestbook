@@ -28,7 +28,7 @@ export default function Login() {
   return (
     <>
       <form onSubmit={handleLogin}>
-        <label htmlFor="email">Email</label>
+        <label aria-label="email">Email</label>
         <input
           id="email"
           name="email"
@@ -36,7 +36,7 @@ export default function Login() {
           value={formState.email}
           onChange={handleFormStateChange}
         />{' '}
-        <label hmtlFor="password">Password</label>
+        <label aria-label="password">Password</label>
         <input
           id="password"
           name="password"
@@ -44,7 +44,7 @@ export default function Login() {
           value={formState.password}
           onChange={handleFormStateChange}
         />
-        <button type="submit" aria-label="Sign In">
+        <button type="submit" aria-label="sign-in">
           Sign In
         </button>
       </form>
