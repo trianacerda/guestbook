@@ -38,12 +38,12 @@ function GuestBook() {
   );
 
   const guestBookMessage = user
-    ? `Hey ${name}, thanks for signing your message`
-    : `Please sign the guest book, ${name}`;
+    ? `Hey ${name}-- thanks for signing your message`
+    : `Please sign the guest book-- ${name}`;
 
   return (
     <>
-      <h1 className="guest-book-message">{guestBookMessage}</h1>
+      <h2 className="guest-book-message">{guestBookMessage}</h2>
       <form className="guestbook-form" onSubmit={handleSubmit}>
         {user ? null : guestNameEntry}
         <div className="message-field">

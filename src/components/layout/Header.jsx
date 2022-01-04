@@ -8,8 +8,7 @@ const Header = () => {
     <header>
       {user ? (
         <p>
-          You're Signing Guestbook as
-          <span className="header-user">{user}</span>
+          You're Signing Guestbook as: <p className="header-user">{user}</p>
         </p>
       ) : (
         <p>Aw Shucks-- Please Sign In!</p>
