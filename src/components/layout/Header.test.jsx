@@ -13,7 +13,9 @@ it('should render a LayoutViews + children components', async () => {
     </MemoryRouter>
   );
 
-  const header = await screen.findByText('Aw Shucks-- Please Sign In!');
+  const header = await screen.findByText(
+    'Aw Shucks-- Please Sign You Name and Enter a Message!'
+  );
 
   expect(header).toBeInTheDocument();
   expect(container).toMatchSnapshot();
