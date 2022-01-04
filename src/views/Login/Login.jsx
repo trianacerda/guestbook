@@ -27,6 +27,7 @@ export default function Login() {
 
   return (
     <>
+      <h1> Sign in here to access the guestbook</h1>
       <form onSubmit={handleLogin}>
         <label aria-label="email">Email</label>
         <input
@@ -48,7 +49,7 @@ export default function Login() {
           Sign In
         </button>
       </form>
-      {error && <h1>{error}</h1>}
+      {error && <h4>{error}</h4>}
     </>
   );
 }
