@@ -1,6 +1,8 @@
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Home from './views/Home/Home';
+import Login from './views/Login/Login';
 import LayoutViews from './views/LayoutViews/LayoutViews';
-import { PrivateRoute } from '';
+import { PrivateRoute } from './components/PrivateRoute/PrivateRoute';
 import { ProvideAuth } from './context/ProvideAuth';
 
 export default function App() {
@@ -9,10 +11,10 @@ export default function App() {
       <ProvideAuth>
         <Router>
           <Switch>
-            <Route path="/login">
+            <Route exact path="/login">
               <Login />
             </Route>
-            <PrivateRoute path="/guestbook">
+            <PrivateRoute exact path="/">
               <LayoutViews>
                 <Home />
               </LayoutViews>
