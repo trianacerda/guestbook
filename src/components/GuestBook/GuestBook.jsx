@@ -2,12 +2,16 @@ import React from 'react';
 import { useState } from 'react';
 import { useMessages } from '../../context/MessageContext';
 import { useUser } from '../../context/UserContext';
+import { useHistory } from 'react-router-dom';
+import { useAuth } from '../../hooks/useAuth';
 
 function GuestBook() {
   const [name, setName] = useState('');
   const [guestMessage, setGuestMessage] = useState('');
   const { messages, setMessages } = useMessages();
   const { user, setUser } = useUser();
+  const history = useHistory();
+  const { logout } = useAuth();
 
   function updateGuestName() {
     if (!guestMessage) return;
@@ -37,6 +41,10 @@ function GuestBook() {
     </div>
   );
 
+  const handleLogOut = () => {
+    logout(() => history.push('/'));
+  };
+
   const guestBookMessage = user
     ? `Hey ${name}-- thanks for signing your message`
     : `Please sign the guest book-- ${name}`;
@@ -62,15 +70,8 @@ function GuestBook() {
           Submit && Sign
         </button>
         {user && (
-          <button
-            type="button"
-            className="sign-out-btn"
-            onClick={() => {
-              setUser('');
-              setName('');
-            }}
-          >
-            Not {user} ??
+          <button type="button" className="sign-out-btn" onClick={handleLogOut}>
+            Not {user}? Click here to log out--
           </button>
         )}
       </form>

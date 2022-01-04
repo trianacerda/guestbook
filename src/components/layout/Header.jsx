@@ -7,11 +7,12 @@ const Header = () => {
   return (
     <header>
       {user ? (
-        <p>
-          You're Signing Guestbook as: <p className="header-user">{user}</p>
-        </p>
+        <div>
+          You're Signing Guestbook as:
+          <p className="header-user">{user}</p>
+        </div>
       ) : (
-        <p>Aw Shucks-- Please Sign In!</p>
+        <p>Aw Shucks-- Please Sign You Name and Enter a Message!</p>
       )}
     </header>
   );
