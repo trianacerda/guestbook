@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 import { useAuth } from '../../hooks/useAuth';
 import { useForm } from '../../hooks/useForm';
+import styles from './Login.css';
 
 export default function Login() {
   const history = useHistory();
@@ -35,6 +36,7 @@ export default function Login() {
           id="email"
           name="email"
           type="email"
+          placeholder="email"
           value={formState.email}
           onChange={handleFormStateChange}
         />{' '}
@@ -43,6 +45,7 @@ export default function Login() {
           id="password"
           name="password"
           type="password"
+          placeholder="password"
           value={formState.password}
           onChange={handleFormStateChange}
         />

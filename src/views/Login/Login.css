@@ -1,0 +1,23 @@
+label {
+  display: flex;
+  justify-content: center;
+}
+form {
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+  margin: 30px;
+  border-radius: 5px;
+  border-width: 10px;
+  border-color: aqua;
+  background-color: grey;
+}
+button {
+  background-color: gold;
+  color: grey;
+  border-radius: 20px;
+  border-color: aqua;
+  border-width: 10px;
+  display: flex;
+  justify-content: center;
+}
