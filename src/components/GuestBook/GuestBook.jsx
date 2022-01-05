@@ -1,59 +1,34 @@
 import React from 'react';
 import { useState } from 'react';
 import { useMessages } from '../../context/MessageContext';
-import { useUser } from '../../context/UserContext';
 import { useHistory } from 'react-router-dom';
 import { useAuth } from '../../hooks/useAuth';
 
 function GuestBook() {
-  const [name, setName] = useState('');
   const [guestMessage, setGuestMessage] = useState('');
   const { messages, setMessages } = useMessages();
-  const { user, setUser } = useUser();
   const history = useHistory();
-  const { logout } = useAuth();
+  const { logout, user } = useAuth();
 
-  function updateGuestName() {
+  function savedGuestName() {
     if (!guestMessage) return;
-    setUser(name);
-    setMessages([...messages, { name, message: guestMessage }]);
+    setMessages([...messages, { name: user.email, message: guestMessage }]);
     setGuestMessage('');
   }
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    updateGuestName();
+    savedGuestName();
   };
-
-  const guestNameEntry = (
-    <div className="name-field">
-      <label className="name-label" htmlFor="name-entry">
-        Name:
-      </label>
-      <input
-        type="text"
-        id="guest-name"
-        value={name}
-        className="name-input"
-        placeholder="Enter Name"
-        onChange={(e) => setName(e.target.value)}
-      />
-    </div>
-  );
 
   const handleLogOut = () => {
     logout(() => history.push('/'));
   };
 
-  const guestBookMessage = user
-    ? `Hey ${name}-- thanks for signing your message`
-    : `Please sign the guest book-- ${name}`;
-
   return (
     <>
-      <h2 className="guest-book-message">{guestBookMessage}</h2>
+      <h2 className="guest-book-message">{`Hey ${user.email}-- thanks for signing your message`}</h2>
       <form className="guestbook-form" onSubmit={handleSubmit}>
-        {user ? null : guestNameEntry}
         <div className="message-field">
           <label>
             Message:
@@ -71,7 +46,7 @@ function GuestBook() {
         </button>
         {user && (
           <button type="button" className="sign-out-btn" onClick={handleLogOut}>
-            Not {user}? Click here to log out--
+            Not {user.email}? Click here to log out--
           </button>
         )}
       </form>
