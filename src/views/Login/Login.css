@@ -1,6 +1,19 @@
 label {
   display: flex;
   justify-content: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: dodgerblue;
+  background-color: co;
+  border: groove;
+  border-color: lightcoral;
+  border-radius: 10px;
+  font-size: x-large;
 }
 form {
   display: flex;
@@ -9,15 +22,26 @@ form {
   margin: 30px;
   border-radius: 5px;
   border-width: 10px;
-  border-color: aqua;
-  background-color: grey;
+  border-color: dodgerblue;
+  background-color: cornflowerblue;
+  border-style: groove;
+  border-color: coral;
 }
-button {
-  background-color: gold;
-  color: grey;
+
+input {
   border-radius: 20px;
-  border-color: aqua;
+  padding: 10px;
+}
+
+button {
+  background-color: white;
+  color: coral;
+  border-radius: 20px;
+  border-color: coral;
   border-width: 10px;
   display: flex;
   justify-content: center;
+}
+
+ {
 }

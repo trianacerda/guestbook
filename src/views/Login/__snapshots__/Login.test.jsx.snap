@@ -8,13 +8,14 @@ exports[`should render Login comp + snapshot test 1`] = `
   <form>
     <label
       aria-label="email"
+      style="color: white; font-style: bold; flex-direction: column;"
     >
-      Email
+      Email:
     </label>
     <input
       id="email"
       name="email"
-      placeholder="email"
+      placeholder="email..."
       required=""
       type="email"
       value=""
@@ -22,13 +23,14 @@ exports[`should render Login comp + snapshot test 1`] = `
      
     <label
       aria-label="password"
+      style="color: white; font-style: bold; flex-direction: column;"
     >
-      Password
+      Password:
     </label>
     <input
       id="password"
       name="password"
-      placeholder="password"
+      placeholder="password..."
       required=""
       type="password"
       value=""

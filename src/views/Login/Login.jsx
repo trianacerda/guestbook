@@ -31,22 +31,40 @@ export default function Login() {
     <>
       <h1> Sign in here to access the guestbook</h1>
       <form onSubmit={handleLogin}>
-        <label aria-label="email">Email</label>
+        <label
+          aria-label="email"
+          style={{
+            color: 'white',
+            fontStyle: 'bold',
+            flexDirection: 'column',
+          }}
+        >
+          Email:
+        </label>
         <input
           id="email"
           name="email"
           type="email"
-          placeholder="email"
+          placeholder="email..."
           value={formState.email}
           onChange={handleFormStateChange}
           required
         />{' '}
-        <label aria-label="password">Password</label>
+        <label
+          aria-label="password"
+          style={{
+            color: 'white',
+            fontStyle: 'bold',
+            flexDirection: 'column',
+          }}
+        >
+          Password:
+        </label>
         <input
           id="password"
           name="password"
           type="password"
-          placeholder="password"
+          placeholder="password..."
           value={formState.password}
           onChange={handleFormStateChange}
           required
