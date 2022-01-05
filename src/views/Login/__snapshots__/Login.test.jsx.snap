@@ -8,7 +8,7 @@ exports[`should render Login comp + snapshot test 1`] = `
   <form>
     <label
       aria-label="email"
-      style="color: white; font-style: bold; flex-direction: column;"
+      style="color: black; font-style: bold; flex-direction: column;"
     >
       Email:
     </label>
@@ -23,7 +23,7 @@ exports[`should render Login comp + snapshot test 1`] = `
      
     <label
       aria-label="password"
-      style="color: white; font-style: bold; flex-direction: column;"
+      style="color: black; font-style: bold; flex-direction: column;"
     >
       Password:
     </label>
