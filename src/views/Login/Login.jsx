@@ -34,7 +34,7 @@ export default function Login() {
         <label
           aria-label="email"
           style={{
-            color: 'white',
+            color: 'black',
             fontStyle: 'bold',
             flexDirection: 'column',
           }}
@@ -53,7 +53,7 @@ export default function Login() {
         <label
           aria-label="password"
           style={{
-            color: 'white',
+            color: 'black',
             fontStyle: 'bold',
             flexDirection: 'column',
           }}
