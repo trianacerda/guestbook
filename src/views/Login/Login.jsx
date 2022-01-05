@@ -39,6 +39,7 @@ export default function Login() {
           placeholder="email"
           value={formState.email}
           onChange={handleFormStateChange}
+          required
         />{' '}
         <label aria-label="password">Password</label>
         <input
@@ -48,6 +49,7 @@ export default function Login() {
           placeholder="password"
           value={formState.password}
           onChange={handleFormStateChange}
+          required
         />
         <button type="submit" aria-label="sign-in">
           Sign In

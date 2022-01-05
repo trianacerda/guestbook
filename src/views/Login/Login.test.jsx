@@ -5,7 +5,7 @@ import Login from '../Login/Login';
 import { UserProvider } from '../../context/UserContext';
 import { ProvideAuth } from '../../context/ProvideAuth';
 
-it('should render Login comp + snapshot test', async () => {
+it('should render Login comp + snapshot test', () => {
   const { container } = render(
     <MemoryRouter>
       <UserProvider>

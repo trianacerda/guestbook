@@ -15,6 +15,7 @@ exports[`should render Login comp + snapshot test 1`] = `
       id="email"
       name="email"
       placeholder="email"
+      required=""
       type="email"
       value=""
     />
@@ -28,6 +29,7 @@ exports[`should render Login comp + snapshot test 1`] = `
       id="password"
       name="password"
       placeholder="password"
+      required=""
       type="password"
       value=""
     />
