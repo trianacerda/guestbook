@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Login comp + snapshot test 1`] = `
+<div>
+  <h1>
+     Sign in here to access the guestbook
+  </h1>
+  <form>
+    <label
+      aria-label="email"
+      style="color: black; font-style: bold; flex-direction: column;"
+    >
+      Email:
+    </label>
+    <input
+      id="email"
+      name="email"
+      placeholder="email..."
+      required=""
+      type="email"
+      value=""
+    />
+     
+    <label
+      aria-label="password"
+      style="color: black; font-style: bold; flex-direction: column;"
+    >
+      Password:
+    </label>
+    <input
+      id="password"
+      name="password"
+      placeholder="password..."
+      required=""
+      type="password"
+      value=""
+    />
+    <button
+      aria-label="sign-in"
+      type="submit"
+    >
+      Sign In
+    </button>
+  </form>
+</div>
+`;

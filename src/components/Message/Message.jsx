@@ -3,8 +3,16 @@ import React from 'react';
 function Message({ message: { name, message } }) {
   return (
     <>
-      <h3 className="name">{name}</h3>
-      <p>{message}</p>
+      <div
+        style={{
+          borderStyle: 'solid',
+          borderColor: 'purple',
+          borderRadius: '20px',
+        }}
+      >
+        <p className="name">{name}</p>
+        <p>{message}</p>
+      </div>
     </>
   );
 }

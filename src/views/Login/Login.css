@@ -1,0 +1,47 @@
+label {
+  display: flex;
+  justify-content: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: dodgerblue;
+  background-color: co;
+  border: groove;
+  border-color: lightcoral;
+  border-radius: 10px;
+  font-size: x-large;
+}
+form {
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+  margin: 30px;
+  border-radius: 5px;
+  border-width: 10px;
+  border-color: dodgerblue;
+  background-color: cornflowerblue;
+  border-style: groove;
+  border-color: coral;
+}
+
+input {
+  border-radius: 20px;
+  padding: 10px;
+}
+
+button {
+  background-color: white;
+  color: black;
+  border-radius: 20px;
+  border-color: coral;
+  border-width: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+ {
+}
